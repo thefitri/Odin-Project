@@ -2,12 +2,11 @@ def caesar_cipher plain_text, shift
   encrypted_text = ""
   plain_text.each_char do |char|
     if char =~ /[A-Z]/
-      encrypted_text << (char.ord - 65 + shift) % 26 + 65
+      char = (char.ord - 65 + shift) % 26 + 65
     elsif char =~ /[a-z]/
-      encrypted_text << (char.ord - 97 + shift) % 26 + 97
-    else
-      encrypted_text << char
+      char = (char.ord - 97 + shift) % 26 + 97
     end
+    encrypted_text << char
   end
   return encrypted_text
 end
