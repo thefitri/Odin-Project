@@ -7,7 +7,7 @@ def stock_picker prices
     end
   end
   max_return = matrix.values.max
-  max_return_days = matrix.select{ |days,value| value == max_return}
+  max_return_days = matrix.select{|days,value| value == max_return}
   return max_return_days.first[0]
 end
 
