@@ -11,4 +11,4 @@ def caesar_cipher plain_text, shift
   return encrypted_text
 end
 
-puts "Usage:\ncaesar_cipher([plain text], [shift key])"
+puts "usage:\tcaesar_cipher([plain_text:string], [shift_key:integer])"
