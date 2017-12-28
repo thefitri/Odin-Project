@@ -2,7 +2,7 @@ def stock_picker price_array
   matrix = {}
   last_day = price_array.length - 1
   (0..last_day).each do |day_a|
-    (day_a..last_day).each do |day_b|
+    (day_a+1..last_day).each do |day_b|
       matrix[[day_a,day_b]] = price_array[day_b]- price_array[day_a]
     end
   end
