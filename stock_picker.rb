@@ -1,9 +1,9 @@
-def stock_picker price_array
+def stock_picker prices
   matrix = {}
-  last_day = price_array.length - 1
+  last_day = prices.length - 1
   (0..last_day).each do |day_a|
     (day_a+1..last_day).each do |day_b|
-      matrix[[day_a,day_b]] = price_array[day_b]- price_array[day_a]
+      matrix[[day_a,day_b]] = prices[day_b] - prices[day_a]
     end
   end
   max_return = matrix.values.max
