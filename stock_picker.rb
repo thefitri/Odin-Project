@@ -11,4 +11,4 @@ def stock_picker prices
   return max_return_days.first[0]
 end
 
-puts "Usage:\nstock_picker([stock price array])"
+puts "usage:\tstock_picker([stock_prices:array])"
