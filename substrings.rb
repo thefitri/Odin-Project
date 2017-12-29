@@ -1,7 +1,21 @@
-def substrings str, word_array = dictionary
-  str.downcase!
-  str.split(/\w+/)
-  return nil
+def substrings str, dictionary
+  match = {}
+  words = str.strip.downcase.split
+  
+  dictionary.map do |dictionary_word|
+    match[dictionary_word.strip.downcase] = 0
+  end
+  
+  words.map do |word|
+    match.map do |key, value|
+      match[key] += word =~ /#{key}/ ? 1 : 0
+    end
+  end
+  
+  return match.select {|key, value| value > 0}
 end
 
-puts "Usage:\nsubstrings([string], [array])"
+word = "Howdy partner, sit down! How's it going?"
+dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+
+puts "usage:\tsubstrings([word:string], [dictionary:array])"
