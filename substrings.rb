@@ -1,7 +1,7 @@
 def substrings str, dictionary
   match = {}
   words = str.strip.downcase.split
-  dictionary.map {|dictionary_word| match[dictionary_word.strip.downcase] = 0}
+  dictionary.map {|word| match[word.strip.downcase] = 0}
   
   words.map do |word|
     match.map {|key, value| match[key] += word =~ /#{key}/ ? 1 : 0}
