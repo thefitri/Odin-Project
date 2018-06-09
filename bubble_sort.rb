@@ -1,8 +1,7 @@
 def bubble_sort array
-  max_index = array.length - 1
-  (0..max_index).each do |key|
-    (0..max_index - key).each do |index|
-      if !(max_index - key == index) && (array[index] > array[index+1])
+  (0..array.length - 1).each do |key|
+    (0..array.length - (key + 2)).each do |index|
+      if (array[index] > array[index+1])
         temp = array[index]
         array[index] = array[index+1]
         array[index+1] = temp
@@ -12,4 +11,4 @@ def bubble_sort array
   return array
 end
 
-puts "Usage: bubble_sort([numbers array])"
+puts "Usage: bubble_sort([array])"
